@@ -42,8 +42,8 @@
             <!-- Text input-->
 
             <form method="post" action="">
-                คำค้น <input type="text" name="k" autofocus>
-                <input type="Submit" name="Submit" value="คันหา">
+                ค้นหา <input type="text" name="k" autofocus>
+                <input type="Submit" name="Submit" value="ค้นหา">
             </form>
 
     </div>
