@@ -128,11 +128,11 @@
     <?php
 	 if (isset ($_POST ['Submit'])){
 		 include("connectdb.php");
-		$sqlUp = "UPDATE `pdfemale` SET `fm_id`={$_POST[null]},`fm_name`={$_POST[name]},`fm_color`={$_POST[color]},`fm_brand`={$_POST[brand]},`fm_detail`={$_POST[detail]},`fm_price`={$_POST[price]},`fm_img`={$_POST[img]},`pt_id`={$_POST[sex]} WHERE ={$_GET['id']}";
+		$sqlUp = "UPDATE `pdfemale` SET `p_id`={$_POST[null]},`p_name`={$_POST[name]},`p_color`={$_POST[color]},`p_brand`={$_POST[brand]},`p_detail`={$_POST[detail]},`p_price`={$_POST[price]},`p_img`={$_POST[img]},`pt_id`={$_POST[sex]} WHERE ={$_GET['id']}";
 		 //var_dump($sql); exit;
 		 mysqli_query($conn,$sql) or die ("แก้ไขข้อมูลไม่ได้");
 		 if(isset($_FILES ['img']['name'])){
-		 @copy($_FILES['img']['tmp_name'],"img/".$_POST['fm_img'].".png");  //codeเพิ่มรูป  
+		 @copy($_FILES['img']['tmp_name'],"img/".$_POST['p_img'].".jpg");  //codeเพิ่มรูป  
 		 }
 		 echo "<script>";
 		 echo "alert ('แก้ไขข้อมูลสำเร็จ');";
