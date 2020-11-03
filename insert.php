@@ -112,12 +112,12 @@
 
 	 if (isset ($_POST ['Submit'])){
 		 include("connectdb.php");
-     $sql = "INSERT INTO pdfemale VALUES ('".$_POST['fm_id']."','".$_POST['fm_name']."','".$_POST['fm_color']."', 
-     '".$_POST['fm_brand']."','".$_POST['fm_detail']."', '".$_POST['fm_price']."', '".$_POST['fm_id'].".jpg', '');";
+     $sql = "INSERT INTO pdfemale VALUES ('".$_POST['p_id']."','".$_POST['p_name']."','".$_POST['p_color']."', 
+     '".$_POST['p_brand']."','".$_POST['p_detail']."', '".$_POST['p_price']."', '".$_POST['p_id'].".jpg', '');";
 		 //var_dump($sql); exit;
 		 mysqli_query($conn,$sql) or die ("เพิ่มข้อมูลไม่ได้");
 		 
-		 copy($_FILES['img']['tmp_name'],"img/".$_POST['fm_id'].".jpg");  //codeเพิ่มรูป 
+		 copy($_FILES['img']['tmp_name'],"img/".$_POST['p_id'].".jpg");  //codeเพิ่มรูป 
 		 
 		 
 		 echo "<script>";
