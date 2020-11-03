@@ -96,7 +96,8 @@ session_start();
                 <td>
                     <ul class="list-inline">
                         <li class="list-inline-item">
-                            <img alt="Avatar" class="table-avatar" src="../img/<?php echo $item["p_img"]; ?>">
+                            <img alt="Avatar" class="table-avatar w-100 h-100"
+                                src="../img/<?php echo $item["p_img"]; ?>">
                         </li>
                     </ul>
 
