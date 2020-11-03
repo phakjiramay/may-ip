@@ -123,11 +123,24 @@ if (mysqli_num_rows($result) > 0) {
 //   echo "0 results";
 // }
 } 
-
-  mysqli_close($conn);
+ 
 ?>
 
-                <?php
+
+            </tbody>
+        </table>
+        <!-- /.table-responsive -->
+    </div>
+    <!-- /.panel-body -->
+    </div>
+
+
+</body>
+
+</html>
+
+
+<?php
 include("connectdb.php");
         if (isset($_GET["deleteR"] )) {
                 echo
@@ -182,15 +195,3 @@ include("connectdb.php");
         }
     }
         ?>
-
-            </tbody>
-        </table>
-        <!-- /.table-responsive -->
-    </div>
-    <!-- /.panel-body -->
-    </div>
-
-
-</body>
-
-</html>
