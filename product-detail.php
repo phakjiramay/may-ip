@@ -111,7 +111,7 @@
         <?php 
 						include_once("connectdb.php");
 						@$sql = "SELECT * FROM `pdfemale` WHERE p_id='{$_GET["p_id"]}'";
-						$result = mysqli_query($conn, $sql);
+						@$result = mysqli_query($conn, $sql);
 						if (mysqli_num_rows($result) > 0) {
 						// output data of each row
 							while($row = mysqli_fetch_assoc($result)) { 
