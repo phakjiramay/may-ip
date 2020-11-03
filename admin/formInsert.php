@@ -68,7 +68,7 @@ session_start();
                                         required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" required placeholder="รูป" name="p_img"
+                                    <input type="file" class="form-control" required placeholder="รูป" name="p_img"
                                         required>
                                 </div>
                                 <div class="form-group">
