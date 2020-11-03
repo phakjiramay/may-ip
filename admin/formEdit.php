@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['a_username'])) {
+if (isset($_SESSION['ses_aid'])) {
 
     if (isset($_GET["p_id"])) { ?>
 

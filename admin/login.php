@@ -1,6 +1,6 @@
 <?php
 session_start();
-unset($_SESSION['a_username']);
+unset($_SESSION['ses_aid']);
 ?>
 
 <!DOCTYPE html>
