@@ -49,7 +49,7 @@
     </div>
 
     <?php
-	$kk = $_POST['k'];
+	@$kk = $_POST['k'];
     include("connectdb.php");
 	$sql = "SELECT * FROM pdfemale WHERE (fm_name LIKE '%".$kk."%') or (fm_color LIKE '%".$kk."%') or (fm_brand LIKE '%".$kk."%') or (fm_detail LIKE '%".$kk."%') or (fm_price LIKE '%".$kk."%') ";
 	$rs = mysqli_query($conn, $sql) ;
