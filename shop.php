@@ -48,86 +48,9 @@
 
     </div>
 
+
+
     <?php
-	@$kk = $_POST['k'];
-    include("connectdb.php");
-	$sql = "SELECT * FROM pdfemale WHERE (p_name LIKE '%".$kk."%') or (p_color LIKE '%".$kk."%') or (p_brand LIKE '%".$kk."%') or (p_detail LIKE '%".$kk."%') or (p_price LIKE '%".$kk."%') ";
-	$rs = mysqli_query($conn, $sql) ;
-	while ($data = mysqli_fetch_array($rs)) {	
-?>
-
-
-    <br>
-
-    </fieldset>
-    </form>
-    <div class="table-responsive">
-        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTablesID">
-            <thead>
-                <tr th bgcolor="#FFA07A">
-                    <th width="5%">ลำดับ</th>
-                    <th width="15%">ชื่อ</th>
-                    <th width="1%">สี</th>
-                    <th width="10%">ยี่ห้อ</th>
-                    <th width="50%">รายละเอียด</th>
-                    <th width="10%">ราคา</th>
-                    <th width="10%">รูปสินค้า</th>
-                    <th width="10%"></th>
-
-                </tr>
-            </thead>
-            <tbody>
-
-                <?php
-include("connectdb.php"); 
-    
-//$sql = "SELECT * FROM `pdfemale` ORDER BY `fm_id` ASC  limit 40";
-$result = mysqli_query($conn, $sql);
-
-if (mysqli_num_rows($result) > 0) {
-    $id=1;
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result)) {
-      
-
- ?>
-
-                <tr>
-                    <td><?=$id;?></td>
-                    <td><?=$row['p_name'];?></td>
-                    <td><?=$row['p_color'];?></td>
-                    <td><?=$row['p_brand'];?></td>
-                    <td><?=$row['p_detail'];?></td>
-                    <td><?=$row['p_price'];?></td>
-                    <td><img src="./img/<?=$row['p_img'];?>" width="150" height="200"></td>
-
-                    <td class="text-center">
-                        <div class="btn-group btn-group-sm">
-
-                            <a class="btn btn-warning" href="update.php?fm_id=<?php echo $row["p_id"]; ?>">
-                                <i class="fas fa-edit"> </i>
-                            </a>
-                            <a class="btn btn-danger" href="shop.php?deleteR=req&fm_id=<?php echo $row["p_id"]; ?>">
-                                <i class="fas fa-trash"> </i>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-
-                <?php 
-                 $id++;
-   }
-  
-
-//  else {
-//   echo "0 results";
-// }
-} 
-
-  mysqli_close($conn);
-?>
-
-                <?php
 include("connectdb.php");
         if (isset($_GET["deleteR"] )) {
                 echo
@@ -180,17 +103,5 @@ include("connectdb.php");
 
             mysqli_close($conn);
         }
-    }
+    
         ?>
-
-            </tbody>
-        </table>
-        <!-- /.table-responsive -->
-    </div>
-    <!-- /.panel-body -->
-    </div>
-
-
-</body>
-
-</html>
