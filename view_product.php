@@ -25,10 +25,10 @@
 ?>
 
         <tr>
-            <td><a href="checkout.php?a=<?=$data['c_id'];?>">ดูรายละเอียด</a></td>
-            <td><?=$data['o_id'];?></td>
-            <td><?=$data['o_date'];?></td>
-            <td><?=number_format($data['o_total'],0);?></td>
+            <td><a href="checkout.php?a=<?=$data['oid'];?>">ดูรายละเอียด</a></td>
+            <td><?=$data['oid'];?></td>
+            <td><?=$data['odate'];?></td>
+            <td><?=number_format($data['ototal'],0);?></td>
             <td>---</td>
         </tr>
 
