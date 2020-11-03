@@ -70,12 +70,24 @@ session_start();
                                         required autofocus placeholder="ชื่อสินค้า" name="p_name" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" value="<?php echo $item["p_price"]; ?>"
-                                        required placeholder="ราคาสินค้า" name="p_price" required>
+                                    <input type="number" class="form-control" value="<?php echo $item["p_detail"]; ?>"
+                                        required placeholder="ราคาสินค้า" name="p_detail" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" value="<?php echo $item["p_count"]; ?>"
-                                        required placeholder="จำนวนสินค้า" name="p_count" required>
+                                    <input type="text" class="form-control" value="<?php echo $item["p_price"]; ?>"
+                                        required placeholder="จำนวนสินค้า" name="p_price" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" value="<?php echo $item["p_color"]; ?>" class="form-control"
+                                        required autofocus placeholder="ชื่อสินค้า" name="p_color" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" value="<?php echo $item["p_img"]; ?>"
+                                        required placeholder="ราคาสินค้า" name="p_img" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" value="<?php echo $item["p_brand"]; ?>"
+                                        required placeholder="จำนวนสินค้า" name="p_brand" required>
                                 </div>
 
                                 <div class="text-center">
@@ -108,7 +120,7 @@ session_start();
                 include_once("config/connectDB.php");
 
                 //คำสั่ง SQL บันทึกข้อมูลลงฐานข้อมูล
-                $sqlUp = "UPDATE tbl_products SET p_name = '{$_POST["p_name"]}', p_price = '{$_POST["p_price"]}', p_count = '{$_POST["p_count"]}' 
+                $sqlUp = "UPDATE tbl_products SET p_name = '{$_POST["p_name"]}', '{$_POST["p_price"]}', '{$_POST["p_detail"]}','{$_POST["p_color"]}', '{$_POST["p_img"]}', '{$_POST["p_brand"]}'' 
                       WHERE p_id = '{$_GET["p_id"]}';";
 
                 if (mysqli_query($conn, $sqlUp)) {
