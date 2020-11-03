@@ -20,21 +20,21 @@
         <?php
 	include("connectdb.php");
 	$sql = "SELECT  *  FROM  orders_detail
-          INNER JOIN pdfemale ON orders_detail.pid = pdfemale.fm_id
+          INNER JOIN pdfemale ON orders_detail.pid = pdfemale.p_id
           WHERE orders_detail.oid = '{$_GET['a']}'  ";
 	$rs = mysqli_query($conn, $sql) ;
 	$i = 0;
 	while ($data = mysqli_fetch_array($rs, MYSQLI_BOTH)) {
 		$i++;
-		$sum = $data['fm_price'] * $data['item'] ;
+		$sum = $data['p_price'] * $data['item'] ;
 		$total += $sum;
 ?>
         <tr>
             <td><?=$i;?></td>
-            <td><img src="img/<?=$data['fm_picture'];?>" width="80"> <br>
-                <?=$data['od_product'];?> : <?=$data['fm_name'];?></td>
+            <td><img src="img/<?=$data['p_img'];?>" width="80"> <br>
+                <?=$data['od_product'];?> : <?=$data['p_name'];?></td>
             <td><?=$data['item'];?></td>
-            <td><?=number_format($data['fm_price'],0);?></td>
+            <td><?=number_format($data['p_price'],0);?></td>
             <td><?=number_format($sum,0);?></td>
         </tr>
         <?php } ?>
