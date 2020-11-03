@@ -4,7 +4,7 @@
 	session_destroy();
 
 	echo "กำลังกลับหน้าหลัก กรุณารอสักครู่....";
-	echo "<meta http-equiv=\"refresh\" content=\"2;URL=index.php\">";
+	echo "<meta http-equiv=\"refresh\" content=\"2;URL=index2.php\">";
 	//header("Location: index.php");
 
 ?>

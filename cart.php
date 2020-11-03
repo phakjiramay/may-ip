@@ -228,8 +228,7 @@ if(!empty($_SESSION['fid'])) {
                             </footer>
                         </div>
                         <center>
-                            <p><a href="checkout.php?a=<?=$_SESSION['fid'][$c_number];?>" class="btn btn-primary"
-                                    role="button">ยืนยัน
+                            <p><a href="clear.php" class="btn btn-primary" role="button">ยืนยัน
                                 </a>
                         </center>
                         <div class="gototop js-top">
