@@ -63,7 +63,8 @@ session_start();
                 <th>ไอดีสินค้า</th>
                 <th>ชื่อสินค้า</th>
                 <th>ราคา</th>
-                <th>จำนวน</th>
+                <th>สี</th>
+                <th>รูปภาพ</th>
                 <th>ดำเนินการ</th>
             </tr>
         </thead>
@@ -91,7 +92,14 @@ session_start();
                 <td><?php echo $item["p_detail"]; ?></td>
                 <td><?php echo $item["p_price"]; ?> บาท</td>
                 <td><?php echo $item["p_color"]; ?></td>
-                <td><?php echo $item["p_img"]; ?></td>
+                <td>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <img alt="Avatar" class="table-avatar" src="../img/<?php echo $item["p_img"]; ?>">
+                        </li>
+                    </ul>
+
+                </td>
                 <td class="text-center">
                     <div class="btn-group btn-group-sm">
                         <a class="btn btn-info" href="productDetail.php?p_id=<?php echo $item["p_id"]; ?>">
