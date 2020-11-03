@@ -51,7 +51,7 @@
     <?php
 	@$kk = $_POST['k'];
     include("connectdb.php");
-	$sql = "SELECT * FROM pdfemale WHERE (p_name LIKE '%".$kk."%') or (p_color LIKE '%".$kk."%') or (p_brand LIKE '%".$kk."%') or (p_detail LIKE '%".$kk."%') or (p_price LIKE '%".$kk."%') ";
+	$sql = "SELECT * FROM pdfemale    ";
 	$rs = mysqli_query($conn, $sql) ;
 	while ($data = mysqli_fetch_array($rs)) {	
 ?>
