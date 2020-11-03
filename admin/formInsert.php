@@ -56,15 +56,15 @@ session_start();
                                         name="p_name" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" required placeholder="รายละเอียด"
+                                    <input type="text" class="form-control" required placeholder="รายละเอียด"
                                         name="p_detail" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" required placeholder="ราคา" name="p_price"
+                                    <input type="text" class="form-control" required placeholder="ราคา" name="p_price"
                                         required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" required placeholder="สี" name="p_color"
+                                    <input type="text" class="form-control" required placeholder="สี" name="p_color"
                                         required>
                                 </div>
                                 <div class="form-group">
@@ -72,8 +72,8 @@ session_start();
                                         required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" required placeholder="ยี่ห้อ"
-                                        name="p_brand" required>
+                                    <input type="text" class="form-control" required placeholder="ยี่ห้อ" name="p_brand"
+                                        required>
                                 </div>
                                 <div class="text-center">
                                     <input type="submit" name="SubmitInsert" value="เพิ่มสินค้า"
