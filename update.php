@@ -128,7 +128,7 @@
     <?php
 	 if (isset ($_POST ['Submit'])){
 		 include("connectdb.php");
-		$sqlUp = "UPDATE `pdfemale` SET `p_id`={$_POST[null]},`p_name`={$_POST[name]},`p_color`={$_POST[color]},`p_brand`={$_POST[brand]},`p_detail`={$_POST[detail]},`p_price`={$_POST[price]},`p_img`={$_POST[img]},`pt_id`={$_POST[sex]} WHERE ={$_GET['id']}";
+		$sqlUp = "UPDATE `pdfemale` SET `p_name`={$_POST["name"]},`p_color`={$_POST["color"]},`p_brand`={$_POST["brand"]},`p_detail`={$_POST["detail"]},`p_price`={$_POST["price"]},`p_img`={$_POST["img"]},`pt_id`={$_POST["sex"]} WHERE ={$_GET['id']}";
 		 //var_dump($sql); exit;
 		 mysqli_query($conn,$sql) or die ("แก้ไขข้อมูลไม่ได้");
 		 if(isset($_FILES ['img']['name'])){
