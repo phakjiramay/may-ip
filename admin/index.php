@@ -88,8 +88,10 @@ session_start();
             <tr>
                 <td class="" width="15%"><?php echo $item["p_id"]; ?></td>
                 <td><?php echo $item["p_name"]; ?></td>
+                <td><?php echo $item["p_detail"]; ?></td>
                 <td><?php echo $item["p_price"]; ?> บาท</td>
                 <td><?php echo $item["p_color"]; ?></td>
+                <td><?php echo $item["p_img"]; ?></td>
                 <td class="text-center">
                     <div class="btn-group btn-group-sm">
                         <a class="btn btn-info" href="productDetail.php?p_id=<?php echo $item["p_id"]; ?>">
