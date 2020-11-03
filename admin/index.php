@@ -136,9 +136,6 @@ session_start();
             </div>
         </div>
 
-        <!-- การนำเข้า Navbar -->
-        <?php include_once("navBar.php"); ?>
-
         <br>
 
         <div class="container my-5" ">
