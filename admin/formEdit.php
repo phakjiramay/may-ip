@@ -47,7 +47,7 @@ session_start();
             <?php
 
                     //นำเข้าไฟล์ การเชื่อมต่อฐานข้อมูล
-                    include_once("connectdb.php");
+                    include_once("connectDB.php");
 
                     $sql = "SELECT * FROM pdfemale WHERE p_id='{$_GET["p_id"]}'";
                     $result = mysqli_query($conn, $sql);
