@@ -110,13 +110,13 @@
         </div>
         <?php 
 						include_once("connectdb.php");
-						$sql = "SELECT * FROM `pdfemale` WHERE fm_id='{$_GET["fm_id"]}'";
+						$sql = "SELECT * FROM `pdfemale` WHERE p_id='{$_GET["p_id"]}'";
 						$result = mysqli_query($conn, $sql);
 						if (mysqli_num_rows($result) > 0) {
 						// output data of each row
 							while($row = mysqli_fetch_assoc($result)) { 
 						?>
-        <center><img src="img/<?php echo $row["fm_img"];?>" class="img-fluid"></center>
+        <center><img src="img/<?php echo $row["p_img"];?>" class="img-fluid"></center>
     </div>
     </div>
     </div>
@@ -124,19 +124,19 @@
     <center>
         <div class="col-sm-4">
             <div class="product-desc">
-                <h3><?php echo $row["fm_name"]; ?></h3>
+                <h3><?php echo $row["p_name"]; ?></h3>
     </center>
     <center>
         <p class="price">
-            <span><?php echo $row["fm_price"]; ?> ฿</span>
+            <span><?php echo $row["p_price"]; ?> ฿</span>
     </center>
     <center>
-        <p><?php echo $row["fm_detail"]; ?> </p>
+        <p><?php echo $row["p_detail"]; ?> </p>
     </center>
     <div class="row">
         <div class="col-sm-12 text-center">
             <!-- <p class="addtocart"> -->
-            <a href="cart.php?id=<?php echo $row["fm_id"]?>" class="btn btn-primary btn-addtocart"><i
+            <a href="cart.php?id=<?php echo $row["p_id"]?>" class="btn btn-primary btn-addtocart"><i
                     class="icon-shopping-cart"></i>หยิบลงตะกร้า</a>
             <!-- </p> -->
         </div>

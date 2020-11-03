@@ -63,7 +63,7 @@
                     <div class="row">
                         <div class="col-sm-12 text-left menu-1">
                             <ul>
-                               <li class="active"><a href="index2.php">Home</a></li>
+                                <li class="active"><a href="index2.php">Home</a></li>
                                 <li><a href="women.php">Women</a></li>
                                 <li><a href="men.php">MEN</a></li>
                                 <li><a href="Cart.php">Cart</a></li>
@@ -179,13 +179,13 @@
                     <div class="col-md-3 col-lg-3 mb-4 text-center">
                         <div class="product-entry border">
                             <a href="#" class="prod-img">
-                                <img src="img/<?php echo $row["fm_img"];?>" class="img-fluid"
+                                <img src="img/<?php echo $row["p_img"];?>" class="img-fluid"
                                     alt="Free html5 bootstrap 4 template">
                             </a>
                             <div class="desc">
-                                <h2><a href="#"><?php echo $row["fm_name"]; ?></a></h2>
-                                <span class="price"><?php echo $row["fm_price"]; ?> ฿</span>
-                                <p><a href="product-detail.php?fm_id=<?php echo $row["fm_id"]; ?>"
+                                <h2><a href="#"><?php echo $row["p_name"]; ?></a></h2>
+                                <span class="price"><?php echo $row["p_price"]; ?> ฿</span>
+                                <p><a href="product-detail.php?fm_id=<?php echo $row["p_id"]; ?>"
                                         class="btn btn-primary">รายละเอียด</a></p>
                             </div>
                         </div>
