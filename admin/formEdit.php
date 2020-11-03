@@ -49,7 +49,7 @@ session_start();
                     //นำเข้าไฟล์ การเชื่อมต่อฐานข้อมูล
                     include_once("connectdb.php");
 
-                    $sql = "SELECT * FROM tbl_products WHERE p_id='{$_GET["p_id"]}'";
+                    $sql = "SELECT * FROM pdfemale WHERE p_id='{$_GET["p_id"]}'";
                     $result = mysqli_query($conn, $sql);
 
                     // เเสดงข้อมูลจากฐานข้อมูล
