@@ -72,8 +72,8 @@ session_start();
                                         required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" required placeholder="รูป" name="p_brand"
-                                        required>
+                                    <input type="number" class="form-control" required placeholder="ยี่ห้อ"
+                                        name="p_brand" required>
                                 </div>
                                 <div class="text-center">
                                     <input type="submit" name="SubmitInsert" value="เพิ่มสินค้า"
