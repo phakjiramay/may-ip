@@ -109,7 +109,7 @@
             </div>
         </div>
         <?php 
-						include_once("connectDB.php");
+						include_once("connectdb.php");
 						$sql = "SELECT * FROM `pdfemale` WHERE fm_id='{$_GET["fm_id"]}'";
 						$result = mysqli_query($conn, $sql);
 						if (mysqli_num_rows($result) > 0) {
