@@ -121,7 +121,7 @@
             <div class="col-sm-8 offset-sm-2 text-center colorlib-heading">
                 <div class="row row-pb-md">
                     <?php 
-						include_once("connectDB.php");
+						include_once("connectdb.php");
 
 						$sql = "SELECT * FROM `pdfemale` WHERE pt_id='2'";
 						$result = mysqli_query($conn, $sql);
