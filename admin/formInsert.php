@@ -56,14 +56,25 @@ session_start();
                                         name="p_name" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" required placeholder="ราคาสินค้า"
-                                        name="p_price" required>
+                                    <input type="number" class="form-control" required placeholder="รายละเอียด"
+                                        name="p_detail" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" required placeholder="จำนวนสินค้า"
-                                        name="p_count" required>
+                                    <input type="number" class="form-control" required placeholder="ราคา" name="p_price"
+                                        required>
                                 </div>
-
+                                <div class="form-group">
+                                    <input type="number" class="form-control" required placeholder="สี" name="p_color"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" required placeholder="รูป" name="p_img"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" required placeholder="รูป" name="p_brand"
+                                        required>
+                                </div>
                                 <div class="text-center">
                                     <input type="submit" name="SubmitInsert" value="เพิ่มสินค้า"
                                         class="btn btn-primary">
@@ -92,8 +103,8 @@ session_start();
             include_once("config/connectDB.php");
 
             //คำสั่ง SQL บันทึกข้อมูลลงฐานข้อมูล
-            $sql = "INSERT INTO tbl_products (p_id, p_name, p_price, p_count) 
-                VALUES (NULL, '{$_POST["p_name"]}', '{$_POST["p_price"]}', '{$_POST["p_count"]}');";
+            $sql = "INSERT INTO tbl_products (p_id, p_name, p_price, p_detail,p_color,p_img,p_brand) 
+                VALUES (NULL, '{$_POST["p_name"]}', '{$_POST["p_price"]}', '{$_POST["p_detail"]}','{$_POST["p_color"]}', '{$_POST["p_img"]}', '{$_POST["p_brand"]}');";
 
             if (mysqli_query($conn, $sql)) {
                 echo

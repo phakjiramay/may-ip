@@ -60,7 +60,7 @@ session_start();
     <table id="example" class="table table-striped table-bordered table-hover table-responsive-sm" style="width:100%">
         <thead class="thead-dark">
             <tr>
-                <th>ไอดีสินค้า</th>
+                <th>ลำดับ</th>
                 <th>ชื่อสินค้า</th>
                 <th>รายละเอียด </th>
                 <th>ราคา</th>
