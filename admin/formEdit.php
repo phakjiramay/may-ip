@@ -47,7 +47,7 @@ session_start();
             <?php
 
                     //นำเข้าไฟล์ การเชื่อมต่อฐานข้อมูล
-                    include_once("config/connectDB.php");
+                    include_once("connectdb.php");
 
                     $sql = "SELECT * FROM tbl_products WHERE p_id='{$_GET["p_id"]}'";
                     $result = mysqli_query($conn, $sql);
@@ -117,7 +117,7 @@ session_start();
 
             if (isset($_POST["SubmitUpdate"])) {
                 //นำเข้าไฟล์ การเชื่อมต่อฐานข้อมูล
-                include_once("config/connectDB.php");
+                include_once("connectdb.php");
 
                 //คำสั่ง SQL บันทึกข้อมูลลงฐานข้อมูล
                 $sqlUp = "UPDATE tbl_products SET p_name = '{$_POST["p_name"]}', '{$_POST["p_price"]}', '{$_POST["p_detail"]}','{$_POST["p_color"]}', '{$_POST["p_img"]}', '{$_POST["p_brand"]}'' 
