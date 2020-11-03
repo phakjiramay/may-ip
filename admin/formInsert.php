@@ -100,7 +100,7 @@ session_start();
 
         if (isset($_POST["SubmitInsert"])) {
             //นำเข้าไฟล์ การเชื่อมต่อฐานข้อมูล
-            include_once("config/connectDB.php");
+            include_once("connectdb.php");
 
             //คำสั่ง SQL บันทึกข้อมูลลงฐานข้อมูล
             $sql = "INSERT INTO tbl_products (p_id, p_name, p_price, p_detail,p_color,p_img,p_brand) 
