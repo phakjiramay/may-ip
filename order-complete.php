@@ -63,11 +63,11 @@
                     <div class="row">
                         <div class="col-sm-12 text-left menu-1">
                             <ul>
-                                <li class="active"><a href="index2.php">Home</a></li>
+                               <li class="active"><a href="index2.php">Home</a></li>
                                 <li><a href="women.php">Women</a></li>
                                 <li><a href="men.php">MEN</a></li>
                                 <li><a href="Cart.php">Cart</a></li>
-                                <li><a href="shop.php">admin</a></li>
+                                <li><a href="login.php">admin</a></li>
                                 <li class="cart"><a href="cart.php"><i class="icon-shopping-cart"></i> Cart [0]</a>
                                 </li>
                             </ul>
