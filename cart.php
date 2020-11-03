@@ -7,13 +7,13 @@
 	@$id = $_GET['id'] ;
 	
 	if(isset($_GET['id'])) {
-		@$_SESSION['fid'][$id] = $data['fm_id'];
-        @$_SESSION['fname'][$id] = $data['fm_name'];
-        @$_SESSION['fcolor'][$id] = $data['fm_color']; 
-        @$_SESSION['fbrand'][$id] = $data['fm_brand'];
-        @$_SESSION['fdetail'][$id] = $data['fm_detail'];
-        @$_SESSION['fprice'][$id] = $data['fm_price'];
-        @$_SESSION['fimg'][$id] = $data['fm_img'];
+		@$_SESSION['fid'][$id] = $data['p_id'];
+        @$_SESSION['fname'][$id] = $data['p_name'];
+        @$_SESSION['fcolor'][$id] = $data['p_color']; 
+        @$_SESSION['fbrand'][$id] = $data['p_brand'];
+        @$_SESSION['fdetail'][$id] = $data['p_detail'];
+        @$_SESSION['fprice'][$id] = $data['p_price'];
+        @$_SESSION['fimg'][$id] = $data['p_img'];
 		@$_SESSION['fitem'][$id]++;
 	}
 ?>
@@ -171,40 +171,40 @@
                         </div>
                         <?php
 if(!empty($_SESSION['fid'])) {
-	foreach($_SESSION['fid'] as $c_number) {
+	foreach($_SESSION['fid'] as $pid) {
 		@$i++;
-		@$sum[$c_number] = $_SESSION['fprice'][$pt_id] * $_SESSION['fitem'][$c_number] ;
-		@$total += $sum[$c_number] ;
+		@$sum[$pid] = $_SESSION['fprice'][$pid] * $_SESSION['fitem'][$pid] ;
+		@$total += $sum[$pid] ;
 ?>
                         <div class="product-cart d-flex">
                             <div class="one-forth">
-                                <div class="product-img"
-                                    style="background-image: url(img/<?=$_SESSION['fimg'][$c_number];?>" );">
+                                <div class="product-img" style="background-image: url(img/<?=$_SESSION['fimg'][$pid];?>"
+                                    );">
                                 </div>
                                 <div class="display-tc">
-                                    <h3><?=$_SESSION['fname'][$c_number];?></h3>
+                                    <h3><?=$_SESSION['fname'][$pid];?></h3>
                                 </div>
                             </div>
                             <div class="one-eight text-center">
                                 <div class="display-tc">
-                                    <span class="price"><?=$_SESSION['fprice'][$c_number],0;?></span>
+                                    <span class="price"><?=$_SESSION['fprice'][$pid],0;?></span>
                                 </div>
                             </div>
                             <div class="one-eight text-center">
                                 <div class="display-tc">
                                     <input type="text" id="quantity" name="quantity"
                                         class="form-control input-number text-center"
-                                        value="<?=$_SESSION['fitem'][$c_number];?>" min="1" max="100">
+                                        value="<?=$_SESSION['fitem'][$pid];?>" min="1" max="100">
                                 </div>
                             </div>
                             <div class="one-eight text-center">
                                 <div class="display-tc">
-                                    <span class="price"><?=$_SESSION['fitem'][$c_number];?></span>
+                                    <span class="price"><?=$_SESSION['fitem'][$pid];?></span>
                                 </div>
                             </div>
                             <div class="one-eight text-center">
                                 <div class="display-tc">
-                                    <a href="clear2.php?id=<?=$c_number;?>" class="closed"></a>
+                                    <a href="clear2.php?id=<?=$pid;?>" class="closed"></a>
                                 </div>
                             </div>
                         </div>
