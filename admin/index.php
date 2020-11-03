@@ -6,7 +6,7 @@ session_start();
 <html lang="en">
 
 <head>
-    <title>Crud By Php Mysqli พี่เจมส์ ตาโต</title>
+    <title>Admin</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png"
@@ -45,7 +45,7 @@ session_start();
         <div class="col-md-10">
             <h3>
                 รายการสินค้า จากฐานข้อมูล
-                <span class="text-danger">php_crud_sweetalert2</span>
+                <!-- <span class="text-danger">Product</span> -->
             </h3>
         </div>
         <div class="col-md-2 mt-2">
@@ -74,7 +74,7 @@ session_start();
                 //นำเข้าไฟล์ การเชื่อมต่อฐานข้อมูล
                 include_once("config/connectDB.php");
 
-                $sql = "SELECT * FROM tbl_products";
+                $sql = "SELECT * FROM `pdfemale`";
                 $result = mysqli_query($conn, $sql);
 
                 ////การเช็กว่าข้อมูลมีมากกว่า 1 row 
@@ -89,7 +89,7 @@ session_start();
                 <td class="" width="15%"><?php echo $item["p_id"]; ?></td>
                 <td><?php echo $item["p_name"]; ?></td>
                 <td><?php echo $item["p_price"]; ?> บาท</td>
-                <td><?php echo $item["p_count"]; ?></td>
+                <td><?php echo $item["color"]; ?></td>
                 <td class="text-center">
                     <div class="btn-group btn-group-sm">
                         <a class="btn btn-info" href="productDetail.php?p_id=<?php echo $item["p_id"]; ?>">
