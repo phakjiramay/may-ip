@@ -1,7 +1,7 @@
 <?php
 	@session_start();
 	include("connectdb.php");
-	@$sql = "select * from pdfemale where fm_id ='".$_GET['id']."' ";
+	@$sql = "select * from pdfemale where p_id ='".$_GET['id']."' ";
 	@$rs = mysqli_query($conn, $sql) ;
 	@$data = mysqli_fetch_array($rs, MYSQLI_BOTH);
 	@$id = $_GET['id'] ;
