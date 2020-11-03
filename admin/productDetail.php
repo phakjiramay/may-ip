@@ -1,7 +1,8 @@
 <?php
 session_start();
-if (isset($_SESSION['ses_aid'])) {
-    if (isset($_GET["p_id"])) { ?>
+// if (isset($_SESSION['ses_aid'])) {
+//     if (isset($_GET["p_id"])) { 
+        ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -91,9 +92,9 @@ if (isset($_SESSION['ses_aid'])) {
 </html>
 
 <?php
-    }
-} else {
-    header('Location: login.php');
-    exit;
-}
+//    }
+// } else {
+//     header('Location: login.php');
+//     exit;
+// } 
 ?>
