@@ -51,7 +51,7 @@
     <?php
 	@$kk = $_POST['k'];
     include("connectdb.php");
-	$sql = "SELECT * FROM pdfemale WHERE (fm_name LIKE '%".$kk."%') or (fm_color LIKE '%".$kk."%') or (fm_brand LIKE '%".$kk."%') or (fm_detail LIKE '%".$kk."%') or (fm_price LIKE '%".$kk."%') ";
+	$sql = "SELECT * FROM pdfemale WHERE (p_name LIKE '%".$kk."%') or (p_color LIKE '%".$kk."%') or (p_brand LIKE '%".$kk."%') or (p_detail LIKE '%".$kk."%') or (p_price LIKE '%".$kk."%') ";
 	$rs = mysqli_query($conn, $sql) ;
 	while ($data = mysqli_fetch_array($rs)) {	
 ?>
@@ -94,20 +94,20 @@ if (mysqli_num_rows($result) > 0) {
 
                 <tr>
                     <td><?=$id;?></td>
-                    <td><?=$row['fm_name'];?></td>
-                    <td><?=$row['fm_color'];?></td>
-                    <td><?=$row['fm_brand'];?></td>
-                    <td><?=$row['fm_detail'];?></td>
-                    <td><?=$row['fm_price'];?></td>
-                    <td><img src="./img/<?=$row['fm_img'];?>" width="150" height="200"></td>
+                    <td><?=$row['p_name'];?></td>
+                    <td><?=$row['p_color'];?></td>
+                    <td><?=$row['p_brand'];?></td>
+                    <td><?=$row['p_detail'];?></td>
+                    <td><?=$row['p_price'];?></td>
+                    <td><img src="./img/<?=$row['p_img'];?>" width="150" height="200"></td>
 
                     <td class="text-center">
                         <div class="btn-group btn-group-sm">
 
-                            <a class="btn btn-warning" href="update.php?fm_id=<?php echo $row["fm_id"]; ?>">
+                            <a class="btn btn-warning" href="update.php?fm_id=<?php echo $row["p_id"]; ?>">
                                 <i class="fas fa-edit"> </i>
                             </a>
-                            <a class="btn btn-danger" href="shop.php?deleteR=req&fm_id=<?php echo $row["fm_id"]; ?>">
+                            <a class="btn btn-danger" href="shop.php?deleteR=req&fm_id=<?php echo $row["p_id"]; ?>">
                                 <i class="fas fa-trash"> </i>
                             </a>
                         </div>
@@ -155,10 +155,10 @@ include("connectdb.php");
         if (isset($_GET["deleteR2"])) {
 
             // คำสั่ง sql ในการลบข้อมูล ตาราง tbl_products โดยจะลบข้อมูลสินค้า fm_id ที่ส่งมา
-            $sql = "DELETE FROM `pdfemale` WHERE `pdfemale`.`fm_id` = '{$_GET["fm_id"]}'";
+            $sql = "DELETE FROM `pdfemale` WHERE `pdfemale`.`p_id` = '{$_GET["p_id"]}'";
 
             if (mysqli_query($conn, $sql)) {
-                unlink("img/".$_GET['fm_id'].".png");
+                unlink("img/".$_GET['p_id'].".png");
                 echo
                     "<script> 
                         Swal.fire(

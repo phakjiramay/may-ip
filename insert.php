@@ -117,7 +117,7 @@
 		 //var_dump($sql); exit;
 		 mysqli_query($conn,$sql) or die ("เพิ่มข้อมูลไม่ได้");
 		 
-		 copy($_FILES['img']['tmp_name'],"img/".$_POST['p_id'].".jpg");  //codeเพิ่มรูป 
+		 copy($_FILES['img']['tmp_name'],"img/".$_POST['p_img'].".jpg");  //codeเพิ่มรูป 
 		 
 		 
 		 echo "<script>";
