@@ -30,48 +30,150 @@ session_start();
 
     <!-- การลิ้ง sweetalert2 เเบบ cdn  -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rokkitt:100,300,400,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css">
+    <!-- Ion Icon Fonts-->
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="css/flexslider.css">
+
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <!-- Flaticons  -->
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-    <!-- การนำเข้า Navbar -->
-    <?php include_once("navBar.php"); ?>
+    <div class="colorlib-loader"></div>
 
-    <br>
+    <div id="page">
+        <nav class="colorlib-nav" role="navigation">
+            <div class="top-menu">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-7 col-md-9">
+                            <div id="colorlib-logo"><a href="index.html">Footwear</a></div>
+                        </div>
+                        <div class="col-sm-5 col-md-3">
+                            <form action="#" class="search-wrap" method="post">
+                                <div class="form-group">
+                                    <input type="search" class="form-control search" placeholder="Search">
+                                    <button class="btn btn-primary submit-search text-center" type="submit"><i
+                                            class="icon-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 text-left menu-1">
+                            <ul>
+                                <li class="active"><a href="index2.php">Home</a></li>
+                                <li><a href="women.php">Women</a></li>
+                                <li><a href="men.php">MEN</a></li>
+                                <li><a href="Cart.php">Cart</a></li>
+                                <li><a href="login.php">admin</a></li>
+                                <li class="cart"><a href="cart.php"><i class="icon-shopping-cart"></i> Cart [0]</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <div class="container my-5" ">
+            <div class="sale">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 offset-sm-2 text-center">
+                            <div class="row">
+                                <div class="owl-carousel2">
+                                    <div class="item">
+                                        <div class="col">
+                                            <h3><a href="#">25% off (Almost) Everything! Use Code: Summer Sale</a></h3>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="col">
+                                            <h3><a href="#">Oure biggest sale yet 50% off all summer shoes</a></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="breadcrumbs">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p class="bread"><span><a href="index.html">Home</a></span> / <span>Shopping Cart</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- การนำเข้า Navbar -->
+        <?php include_once("navBar.php"); ?>
+
+        <br>
+
+        <div class="container my-5" ">
         <div class=" row">
-        <div class="col-md-10">
-            <h3>
-                รายการสินค้า จากฐานข้อมูล
-                <!-- <span class="text-danger">Product</span> -->
-            </h3>
+            <div class="col-md-10">
+                <h3>
+                    รายการสินค้า จากฐานข้อมูล
+                    <!-- <span class="text-danger">Product</span> -->
+                </h3>
+            </div>
+            <div class="col-md-2 mt-2">
+                <a href="formInsert.php" class="btn btn-primary">
+                    <i class="far fa-plus-square"></i><span class=" ml-2">เพิ่มสินค้า</span>
+                </a>
+            </div>
         </div>
-        <div class="col-md-2 mt-2">
-            <a href="formInsert.php" class="btn btn-primary">
-                <i class="far fa-plus-square"></i><span class=" ml-2">เพิ่มสินค้า</span>
-            </a>
-        </div>
-    </div>
-    <br>
+        <br>
 
-    <!-- data table ใช้เเสดงข้อมูลเเละเเบ่งหน้าให้อัตโนมัติ -->
-    <table id="example" class="table table-striped table-bordered table-hover table-responsive-sm" style="width:100%">
-        <thead class="thead-dark">
-            <tr>
-                <th>ลำดับ</th>
-                <th>ชื่อสินค้า</th>
-                <th>รายละเอียด </th>
-                <th>ราคา</th>
-                <th>สี</th>
-                <th>รูปภาพ</th>
-                <th>ดำเนินการ</th>
-            </tr>
-        </thead>
-        <tbody>
+        <!-- data table ใช้เเสดงข้อมูลเเละเเบ่งหน้าให้อัตโนมัติ -->
+        <table id="example" class="table table-striped table-bordered table-hover table-responsive-sm"
+            style="width:100%">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ลำดับ</th>
+                    <th>ชื่อสินค้า</th>
+                    <th>รายละเอียด </th>
+                    <th>ราคา</th>
+                    <th>สี</th>
+                    <th>รูปภาพ</th>
+                    <th>ดำเนินการ</th>
+                </tr>
+            </thead>
+            <tbody>
 
-            <?php
+                <?php
 
                 //นำเข้าไฟล์ การเชื่อมต่อฐานข้อมูล
                 include_once("config/connectDB.php");
@@ -85,39 +187,39 @@ session_start();
                 // เเสดงข้อมูลจากฐานข้อมูล
                 while ($item = mysqli_fetch_assoc($result)) { ?>
 
-            <!-- เเสดงข้อมูลจากฐานข้อมูล -->
+                <!-- เเสดงข้อมูลจากฐานข้อมูล -->
 
-            <tr>
-                <td class="" width="15%"><?php echo $item["p_id"]; ?></td>
-                <td><?php echo $item["p_name"]; ?></td>
-                <td><?php echo $item["p_detail"]; ?></td>
-                <td><?php echo $item["p_price"]; ?> บาท</td>
-                <td><?php echo $item["p_color"]; ?></td>
-                <td>
-                    <ul class="list-inline">
-                        <li class="list-inline-item">
-                            <img alt="Avatar" class="table-avatar w-100 h-100"
-                                src="../img/<?php echo $item["p_img"]; ?>">
-                        </li>
-                    </ul>
+                <tr>
+                    <td class="" width="15%"><?php echo $item["p_id"]; ?></td>
+                    <td><?php echo $item["p_name"]; ?></td>
+                    <td><?php echo $item["p_detail"]; ?></td>
+                    <td><?php echo $item["p_price"]; ?> บาท</td>
+                    <td><?php echo $item["p_color"]; ?></td>
+                    <td>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <img alt="Avatar" class="table-avatar w-100 h-100"
+                                    src="../img/<?php echo $item["p_img"]; ?>">
+                            </li>
+                        </ul>
 
-                </td>
-                <td class="text-center">
-                    <div class="btn-group btn-group-sm">
-                        <a class="btn btn-info" href="productDetail.php?p_id=<?php echo $item["p_id"]; ?>">
-                            <i class="fa fa-eye"></i>
-                        </a>
-                        <a class="btn btn-warning" href="formEdit.php?p_id=<?php echo $item["p_id"]; ?>">
-                            <i class="fas fa-edit"> </i>
-                        </a>
-                        <a class="btn btn-danger" href="index.php?deleteR=req&p_id=<?php echo $item["p_id"]; ?>">
-                            <i class="fas fa-trash"> </i>
-                        </a>
-                    </div>
-                </td>
-            </tr>
+                    </td>
+                    <td class="text-center">
+                        <div class="btn-group btn-group-sm">
+                            <a class="btn btn-info" href="productDetail.php?p_id=<?php echo $item["p_id"]; ?>">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <a class="btn btn-warning" href="formEdit.php?p_id=<?php echo $item["p_id"]; ?>">
+                                <i class="fas fa-edit"> </i>
+                            </a>
+                            <a class="btn btn-danger" href="index.php?deleteR=req&p_id=<?php echo $item["p_id"]; ?>">
+                                <i class="fas fa-trash"> </i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
 
-            <?php
+                <?php
                 }
                 // } 
                 // else {
@@ -128,8 +230,8 @@ session_start();
                 // mysqli_close($conn);
                 ?>
 
-        </tbody>
-        <!-- <tfoot>
+            </tbody>
+            <!-- <tfoot>
                 <tr>
                     <th>ไอดีสินค้า</th>
                     <th>ชื่อสินค้า</th>
@@ -138,8 +240,8 @@ session_start();
                     <th>ดำเนินการ</th>
                 </tr>
             </tfoot> -->
-    </table>
-    <!-- จบ datatable -->
+        </table>
+        <!-- จบ datatable -->
 
     </div>
     <!-- จบ คลาส container -->
