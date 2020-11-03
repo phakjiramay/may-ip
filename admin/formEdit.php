@@ -82,7 +82,7 @@ session_start();
                                         required autofocus placeholder="ชื่อสินค้า" name="p_color" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" value="<?php echo $item["p_img"]; ?>"
+                                    <input type="text" class="form-control" value="<?php echo $item["p_img"]; ?>"
                                         required placeholder="ราคาสินค้า" name="p_img" required>
                                 </div>
                                 <div class="form-group">
