@@ -1,6 +1,6 @@
 <?php
 	include("connectdb.php");
-	@$sql = "SELECT * FROM pdfemale where fm_id ='".$_GET['id']."'";
+	@$sql = "SELECT * FROM pdfemale where p_id ='".$_GET['id']."'";
 	$rs = mysqli_query($conn,$sql);
     $data = mysqli_fetch_array($rs);
 			
