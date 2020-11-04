@@ -61,7 +61,7 @@ session_start();
                                         name="p_detail" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" required placeholder="ราคา" name="p_price"
+                                    <input type="number" class="form-control" required placeholder="ราคา" name="p_price"
                                         required>
                                 </div>
                                 <div class="form-group">
@@ -77,7 +77,7 @@ session_start();
                                         required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" required placeholder="ประเภท" name="pt_id"
+                                    <input type="number" class="form-control" required placeholder="ประเภท" name="pt_id"
                                         required>
                                 </div>
                                 <div class="text-center">
@@ -115,7 +115,7 @@ session_start();
             if (mysqli_query($conn, $sql)) {
 
             // @copy($_FILES['p_img']['tmp_name'],"../img/". basename($_FILES["p_img"]["name"]));
-             @copy($_FILES['p_img']['tmp_name'],"../img/".$_FILES["p_img"]["name"].".jpg"); 
+             @copy($_FILES['p_img']['tmp_name'],"../img/". basename($_FILES["p_img"]["name"]));
              //@copy($_FILES["p_img"]["name"],"../img/".$_FILES["p_img"]["name"].".jpg");  
 
              // @copy('foo/test.php', 'bar/test.php');
