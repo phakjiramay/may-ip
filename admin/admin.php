@@ -39,7 +39,7 @@ session_start();
         <div class=" row">
         <div class="col-md-10">
             <h3>
-                รายการสินค้า จากฐานข้อมูล
+                รายการสินค้า
                 <!-- <span class="text-danger">Product</span> -->
             </h3>
         </div>
