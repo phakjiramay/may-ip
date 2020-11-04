@@ -174,7 +174,7 @@ session_start();
         if (isset($_GET["deleteR2"])) {
 
             // คำสั่ง sql ในการลบข้อมูล ตาราง tbl_products โดยจะลบข้อมูลสินค้า p_id ที่ส่งมา
-            $sql = "DELETE FROM tbl_products WHERE p_id={$_GET["p_id"]}";
+            $sql = "DELETE FROM pdfemale WHERE p_id={$_GET["p_id"]}";
 
             if (mysqli_query($conn, $sql)) {
                 echo
