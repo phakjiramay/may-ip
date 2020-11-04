@@ -101,7 +101,7 @@ session_start();
 
         if (isset($_POST["SubmitInsert"])) {
             //นำเข้าไฟล์ การเชื่อมต่อฐานข้อมูล
-            include_once("connectdb.php");
+            include_once("./config/connectDB.php");
 
             //คำสั่ง SQL บันทึกข้อมูลลงฐานข้อมูล
             $sql = "INSERT INTO `pdfemale` (`p_id`, `p_name`, `p_color`, `p_brand`, `p_detail`, `p_price`, `p_img`, `pt_id`) 
