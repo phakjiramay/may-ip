@@ -76,6 +76,10 @@ session_start();
                                     <input type="text" class="form-control" required placeholder="ยี่ห้อ" name="p_brand"
                                         required>
                                 </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" required placeholder="ประเภท" name="pt_id"
+                                        required>
+                                </div>
                                 <div class="text-center">
                                     <input type="submit" name="SubmitInsert" value="เพิ่มสินค้า"
                                         class="btn btn-primary">
@@ -109,18 +113,22 @@ session_start();
                      '".$_POST['p_price']."', '".$_FILES["p_img"]["name"]."', '".$_POST['pt_id']."');";
 
             if (mysqli_query($conn, $sql)) {
-                @copy($_FILES["p_img"]["name"],"../img/".$_FILES["p_img"]["name"].".jpg"); 
-                
-                echo
-                    "<script> 
-                    Swal.fire({
-                        position: 'center',
-                        icon: 'success',
-                        title: 'บันทึกข้อมูลสำเร็จ',
-                        showConfirmButton: false,
-                        timer: 1500
-                    }).then(()=> location = 'admin.php')
-                </script>";
+
+             copy($_FILES['p_img']['tmp_name'],"../img/". basename($_FILES["p_img"]["name"]));
+
+             // @copy('foo/test.php', 'bar/test.php');
+
+                print_r($_FILES["p_img"]);
+                // echo
+                //     "<script> 
+                //     Swal.fire({
+                //         position: 'center',
+                //         icon: 'success',
+                //         title: 'บันทึกข้อมูลสำเร็จ',
+                //         showConfirmButton: false,
+                //         timer: 1500
+                //     }).then(()=> location = 'admin.php')
+                // </script>";
             } else {
                 echo
                     "<script> 
