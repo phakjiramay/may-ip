@@ -47,7 +47,7 @@ session_start();
                         <div class="card-body">
 
                             <!-- Form -->
-                            <form class="text-center" style="color: #757575;" method="post"
+                            <form class="text-center" style="color: #757575;" method="post" action=""
                                 enctype="multipart/form-data">
 
                                 <h3 class="font-weight-bold my-4 pb-2 text-center text-primary">เพิ่มสินค้า </h3>
