@@ -110,7 +110,7 @@ session_start();
                         <a class="btn btn-warning" href="formEdit.php?p_id=<?php echo $item["p_id"]; ?>">
                             <i class="fas fa-edit"> </i>
                         </a>
-                        <a class="btn btn-danger" href="index.php?deleteR=req&p_id=<?php echo $item["p_id"]; ?>">
+                        <a class="btn btn-danger" href="admin.php?deleteR=req&p_id=<?php echo $item["p_id"]; ?>">
                             <i class="fas fa-trash"> </i>
                         </a>
                     </div>
@@ -162,9 +162,9 @@ session_start();
                             cancelButtonText: 'ไม่!'
                         }).then((result) => {
                             if (result.isConfirmed) {
-                                location = 'index.php?deleteR2=req&p_id={$_GET["p_id"]}'
+                                location = 'admin.php?deleteR2=req&p_id={$_GET["p_id"]}'
                             }else{
-                                location = 'index.php'
+                                location = 'admin.php'
                             }
                         }); 
                 </script>";
@@ -183,16 +183,16 @@ session_start();
                             'ลบข้อมูลสำเร็จ!',
                             'ท่านได้ลบข้อมูลเรียบร้อย',
                             'success'
-                        ).then(()=> location = 'index.php')
+                        ).then(()=> location = 'admin.php')
                     </script>";
-                //header('Location: index.php');
+                //header('Location: admin.php');
             } else {
                 echo
                     "<script> 
                     Swal.fire({
                         icon: 'error',
                         title: 'ลบข้อมูลไม่สำเร็จ', 
-                    }).then(()=> location = 'index.php')
+                    }).then(()=> location = 'admin.php')
                 </script>";
             }
 
