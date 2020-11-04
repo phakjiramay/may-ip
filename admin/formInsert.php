@@ -118,7 +118,7 @@ session_start();
                         title: 'บันทึกข้อมูลสำเร็จ',
                         showConfirmButton: false,
                         timer: 1500
-                    }).then(()=> location = 'index.php')
+                    }).then(()=> location = 'admin.php')
                 </script>";
             } else {
                 echo
