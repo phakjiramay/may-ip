@@ -23,8 +23,7 @@ session_start();
 
 <body class="">
 
-    <!-- การนำเข้า Navbar -->
-    <?php include_once("navBar.php"); ?>
+
 
     <br>
 

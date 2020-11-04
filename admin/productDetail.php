@@ -31,9 +31,6 @@ session_start();
 <body>
 
 
-    <!-- การนำเข้า Navbar -->
-    <?php include_once("navBar.php"); ?>
-
     <div class="container my-5">
 
         <?php
