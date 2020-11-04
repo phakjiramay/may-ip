@@ -48,7 +48,7 @@ session_start();
                 <i class="far fa-plus-square"></i><span class=" ml-2">เพิ่มสินค้า</span>
             </a>
             &nbsp;
-            <a href "../login.php" class="btn btn-danger my-2">ออกจากระบบ</a><br><br>
+            <a href="../login.php" class="btn btn-danger my-2">ออกจากระบบ</a><br><br>
         </div>
     </div>
     <br>
