@@ -105,7 +105,7 @@ session_start();
 
             //คำสั่ง SQL บันทึกข้อมูลลงฐานข้อมูล
             $sql = "INSERT INTO `pdfemale` (`p_id`, `p_name`, `p_color`, `p_brand`, `p_detail`, `p_price`, `p_img`, `pt_id`) 
-                    VALUES (NULL, ''".$_POST['p_name']."'', ''".$_POST['p_color']."'', ''".$_POST['p_brand']."'', ''".$_POST['p_detail']."'', ''".$_POST['p_price']."'', ''".$_FILES["p_img"]["name"]."'', ''".$_POST['p_id']."'');";
+                    VALUES (NULL, '{$_POST["p_name"]}', 'CC', '2', 'sdshftuyiui', '4,586', '1004.jpg', '2');";
 
             if (mysqli_query($conn, $sql)) {
                 @copy($_FILES["p_img"]["name"],"../img/".$_FILES["p_img"]["name"].".jpg"); 
