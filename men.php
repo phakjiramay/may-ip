@@ -63,7 +63,7 @@
                     <div class="row">
                         <div class="col-sm-12 text-left menu-1">
                             <ul>
-                                <li class="active"><a href="index2.php">Home</a></li>
+                                <li class="active"><a href="index.php">Home</a></li>
                                 <li><a href="women.php">Women</a></li>
                                 <li><a href="men.php">MEN</a></li>
                                 <li><a href="Cart.php">Cart</a></li>
