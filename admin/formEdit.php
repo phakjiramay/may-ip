@@ -47,7 +47,7 @@ session_start();
             <?php
 
                     //นำเข้าไฟล์ การเชื่อมต่อฐานข้อมูล
-                    include_once("connectDB.php");
+                    include_once("./config/connectDB.php");
 
                     $sql = "SELECT * FROM pdfemale WHERE p_id='{$_GET["p_id"]}'";
                     $result = mysqli_query($conn, $sql);
@@ -121,7 +121,7 @@ session_start();
 
             if (isset($_POST["SubmitUpdate"])) {
                 //นำเข้าไฟล์ การเชื่อมต่อฐานข้อมูล
-                include_once("connectdb.php");
+                include_once("./config/connectDB.php");
 
                 //คำสั่ง SQL บันทึกข้อมูลลงฐานข้อมูล
                 $sqlUp = "UPDATE `pdfemale` SET `p_name` = '".$_POST['p_name']."', `p_color` = '".$_POST['p_color']."', 
