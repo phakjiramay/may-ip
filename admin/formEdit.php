@@ -89,6 +89,10 @@ session_start();
                                     <input type="text" class="form-control" value="<?php echo $item["p_brand"]; ?>"
                                         required placeholder="จำนวนสินค้า" name="p_brand" required>
                                 </div>
+                                <!-- <div class="form-group"> -->
+                                <input type="hidden" class="form-control" value="<?php echo $item["pt_id"]; ?>" required
+                                    placeholder="จำนวนสินค้า" name="pt_id" required>
+                                <!-- </div> -->
 
                                 <div class="text-center">
                                     <input type="submit" name="SubmitUpdate" value="เเก้ไข" class="btn btn-warning">
@@ -120,10 +124,12 @@ session_start();
                 include_once("connectdb.php");
 
                 //คำสั่ง SQL บันทึกข้อมูลลงฐานข้อมูล
-                $sqlUp = "UPDATE tbl_products SET p_name = '{$_POST["p_name"]}', '{$_POST["p_price"]}', '{$_POST["p_detail"]}','{$_POST["p_color"]}', '{$_POST["p_img"]}', '{$_POST["p_brand"]}'' 
-                      WHERE p_id = '{$_GET["p_id"]}';";
+                $sqlUp = "UPDATE `pdfemale` SET `p_name` = '".$_POST['p_name']."', `p_color` = '".$_POST['p_color']."', 
+                           `p_brand` = '".$_POST['p_brand']."', `p_detail` = '".$_POST['p_detail']."', `p_price` = '".$_POST['p_price']."', 
+                           `p_img` = '".$_FILES["p_img"]["name"]."', `pt_id` = '".$_POST['pt_id']."'  WHERE `pdfemale`.`p_id` = '".$_POST['p_id']."';";
 
                 if (mysqli_query($conn, $sqlUp)) {
+                         copy($_FILES['p_img']['tmp_name'],"../img/". basename($_FILES["p_img"]["name"]));
                     echo
                         "<script> 
                     Swal.fire({
@@ -132,7 +138,7 @@ session_start();
                         title: 'เเก้ไขข้อมูลสำเร็จ',
                         showConfirmButton: false,
                         timer: 1500
-                    }).then(()=> location = 'index.php')
+                    }).then(()=> location = 'admin.php')
                 </script>";
                 } else {
                     echo
