@@ -86,7 +86,7 @@
                                 <li><a href="men.php">MEN</a></li>
                                 <li><a href="Cart.php">Cart</a></li>
                                 <li><a href="login.php">admin</a></li>
-                                <li class="cart"><a href="cart.php"><i class="icon-shopping-cart"></i> Cart [0]</a>
+                                <li class="cart"><a href="basket.php"><i class="icon-shopping-cart"></i> Cart [0]</a>
                                 </li>
                             </ul>
                         </div>
@@ -127,7 +127,6 @@
                 </div>
             </div>
         </div>
-
         <blockquote>
             <h2>ตะกร้าสินค้า</h2>
             <a href="index.php" class="btn btn-primary">กลับไปเลือกสินค้า</a>
@@ -149,7 +148,7 @@
                 <?php
 if(!empty($_SESSION['sid'])) {
 	foreach($_SESSION['sid'] as $pid) {
-		@$i++;
+	@$i++;
 		@$sum[$pid] = $_SESSION['sprice'][$pid] * $_SESSION['sitem'][$pid] ;
 		@$total += $sum[$pid] ;
 ?>
