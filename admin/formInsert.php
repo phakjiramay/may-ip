@@ -110,6 +110,7 @@ session_start();
 
             if (mysqli_query($conn, $sql)) {
                 @copy($_FILES["p_img"]["name"],"../img/".$_FILES["p_img"]["name"].".jpg"); 
+                
                 echo
                     "<script> 
                     Swal.fire({
