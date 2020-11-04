@@ -6,8 +6,10 @@ session_start();
 <html lang="en">
 
 <head>
-    <title>Footwear</title>
-    <meta charset="utf-8">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -28,30 +30,23 @@ session_start();
 
     <!-- การลิ้ง sweetalert2 เเบบ cdn  -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
 </head>
 
 <body>
-
-    <br>
-
     <div class="container my-5" ">
         <div class=" row">
         <div class="col-md-10">
             <h3>
-                รายการสินค้า
+                ข้อมูลลูกค้า
                 <!-- <span class="text-danger">Product</span> -->
             </h3>
         </div>
         <div class="col-md-2 mt-2">
-            <a href="formInsert.php" class="btn btn-primary">
-                <i class="far fa-plus-square"></i><span class=" ml-2">เพิ่มสินค้า</span>
-            </a>
+            <a href="admin.php" class="btn btn-primary">ย้อนกลับหน้าหลัก</a>
+
             &nbsp;
             <a href="../login.php" class="btn btn-danger my-2">ออกจากระบบ</a><br><br>
             </a>
-            &nbsp;
-            <a href="Customer.php" class="btn btn-danger my-2">ข้อมูลลูกค้า</a><br><br>
         </div>
     </div>
     <br>
@@ -61,12 +56,10 @@ session_start();
         <thead class="thead-dark">
             <tr>
                 <th>ลำดับที่</th>
-                <th>ชื่อสินค้า</th>
-                <th>รายละเอียด </th>
-                <th>ราคา</th>
-                <th>สี</th>
-                <th>รูปภาพ</th>
-                <th>ดำเนินการ</th>
+                <th>ชื่อลูกค้า</th>
+                <th>ที่อยู่ </th>
+                <th>อีเมล์</th>
+                <th>เบอร์โทรศัพท์</th>
             </tr>
         </thead>
         <tbody>
@@ -76,7 +69,7 @@ session_start();
                 //นำเข้าไฟล์ การเชื่อมต่อฐานข้อมูล
                 include_once("config/connectDB.php");
 
-                $sql = "SELECT * FROM `pdfemale`";
+                $sql = "SELECT * FROM `user`";
                 $result = mysqli_query($conn, $sql);
 
                 ////การเช็กว่าข้อมูลมีมากกว่า 1 row 
@@ -88,29 +81,17 @@ session_start();
             <!-- เเสดงข้อมูลจากฐานข้อมูล -->
 
             <tr>
-                <td class="" width="15%"><?php echo $item["p_id"]; ?></td>
-                <td><?php echo $item["p_name"]; ?></td>
-                <td><?php echo $item["p_detail"]; ?></td>
-                <td><?php echo $item["p_price"]; ?> บาท</td>
-                <td><?php echo $item["p_color"]; ?></td>
+                <td class="" width="15%"><?php echo $item["uid"]; ?></td>
+                <td><?php echo $item["uname"]; ?></td>
+                <td><?php echo $item["add"]; ?></td>
+                <td><?php echo $item["email"]; ?></td>
+                <td><?php echo $item["tal"]; ?></td>
                 <td>
-                    <ul class="list-inline">
-                        <li class="list-inline-item">
-                            <img alt="Avatar" class="table-avatar w-100 h-100"
-                                src="../images/<?php echo $item["p_img"]; ?>">
-                        </li>
-                    </ul>
 
                 </td>
                 <td class="text-center">
                     <div class="btn-group btn-group-sm">
-                        <a class="btn btn-info" href="productDetail.php?p_id=<?php echo $item["p_id"]; ?>">
-                            <i class="fa fa-eye"></i>
-                        </a>
-                        <a class="btn btn-warning" href="formEdit.php?p_id=<?php echo $item["p_id"]; ?>">
-                            <i class="fas fa-edit"> </i>
-                        </a>
-                        <a class="btn btn-danger" href="admin.php?deleteR=req&p_id=<?php echo $item["p_id"]; ?>">
+                        <a class="btn btn-danger" href="Customer.php?deleteR=req&uid=<?php echo $item["uid"]; ?>">
                             <i class="fas fa-trash"> </i>
                         </a>
                     </div>
@@ -145,7 +126,6 @@ session_start();
     <!-- จบ คลาส container -->
 
     <!-- โค้ด pHP ลบข้อมูล -->
-
     <?php
 
         if (isset($_GET["deleteR"] )) {
@@ -206,13 +186,6 @@ session_start();
         $('#example').DataTable();
     });
     </script>
-
 </body>
 
 </html>
-<?php
-// } else {
-//     header('Location: login.php');
-//     exit;
-// }
-?>
