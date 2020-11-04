@@ -114,7 +114,9 @@ session_start();
 
             if (mysqli_query($conn, $sql)) {
 
-             copy($_FILES['p_img']['tmp_name'],"../img/". basename($_FILES["p_img"]["name"]));
+            // @copy($_FILES['p_img']['tmp_name'],"../img/". basename($_FILES["p_img"]["name"]));
+             @copy($_FILES['p_img']['tmp_name'],"../img/".$_FILES["p_img"]["name"].".jpg"); 
+             //@copy($_FILES["p_img"]["name"],"../img/".$_FILES["p_img"]["name"].".jpg");  
 
              // @copy('foo/test.php', 'bar/test.php');
 

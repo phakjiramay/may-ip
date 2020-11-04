@@ -91,7 +91,7 @@
 		$_SESSION['ses_aid'] = $data['aid'];
 		$_SESSION['ses_aname'] = $data['aname'];
 		echo "<script>";
-		echo "window.location='shop.php';";
+		echo "window.location='./admin/admin.php';";
 		echo "</script>";
 	} else {
 		echo "<script>";

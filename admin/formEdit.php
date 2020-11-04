@@ -53,7 +53,7 @@ session_start();
                     $result = mysqli_query($conn, $sql);
 
                     // เเสดงข้อมูลจากฐานข้อมูล
-                    while ($item = mysqli_fetch_assoc($result)) { ?>
+                    while ($data = mysqli_fetch_assoc($result)) { ?>
             <div class="row">
                 <div class="col-md-6 mx-auto">
                     <!-- Material form login -->
@@ -63,34 +63,35 @@ session_start();
                         <div class="card-body">
 
                             <!-- Form -->
-                            <form class="text-center" style="color: #757575;" action="" method="POST">
+                            <form class="text-center" style="color: #757575;" method="post" action=""
+                                enctype="multipart/form-data">
                                 <h3 class="font-weight-bold my-4 pb-2 text-center text-danger">เเก้ไขสินค้า </h3>
                                 <div class="form-group">
-                                    <input type="text" value="<?php echo $item["p_name"]; ?>" class="form-control"
+                                    <input type="text" value="<?php echo $data["p_name"]; ?>" class="form-control"
                                         required autofocus placeholder="ชื่อสินค้า" name="p_name" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" value="<?php echo $item["p_detail"]; ?>"
+                                    <input type="text" class="form-control" value="<?php echo $data["p_detail"]; ?>"
                                         required placeholder="ราคาสินค้า" name="p_detail" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" value="<?php echo $item["p_price"]; ?>"
+                                    <input type="text" class="form-control" value="<?php echo $data["p_price"]; ?>"
                                         required placeholder="จำนวนสินค้า" name="p_price" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" value="<?php echo $item["p_color"]; ?>" class="form-control"
+                                    <input type="text" value="<?php echo $data["p_color"]; ?>" class="form-control"
                                         required autofocus placeholder="ชื่อสินค้า" name="p_color" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" value="<?php echo $item["p_img"]; ?>"
+                                    <input type="file" class="form-control" value="<?php echo $data["p_img"]; ?>"
                                         required placeholder="ราคาสินค้า" name="p_img" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" value="<?php echo $item["p_brand"]; ?>"
+                                    <input type="text" class="form-control" value="<?php echo $data["p_brand"]; ?>"
                                         required placeholder="จำนวนสินค้า" name="p_brand" required>
                                 </div>
                                 <!-- <div class="form-group"> -->
-                                <input type="hidden" class="form-control" value="<?php echo $item["pt_id"]; ?>" required
+                                <input type="hidden" class="form-control" value="<?php echo $data["pt_id"]; ?>" required
                                     placeholder="จำนวนสินค้า" name="pt_id" required>
                                 <!-- </div> -->
 
@@ -124,12 +125,14 @@ session_start();
                 include_once("./config/connectDB.php");
 
                 //คำสั่ง SQL บันทึกข้อมูลลงฐานข้อมูล
-                $sqlUp = "UPDATE `pdfemale` SET `p_name` = '".$_POST['p_name']."', `p_color` = '".$_POST['p_color']."', 
-                           `p_brand` = '".$_POST['p_brand']."', `p_detail` = '".$_POST['p_detail']."', `p_price` = '".$_POST['p_price']."', 
-                           `p_img` = '".$_FILES["p_img"]["name"]."', `pt_id` = '".$_POST['pt_id']."'  WHERE `pdfemale`.`p_id` = '".$_POST['p_id']."';";
+                $sqlUp = "UPDATE `pdfemale` SET `p_name` = '{$_POST["p_name"]}', `p_color` = '{$_POST["p_color"]}',
+                         `p_brand` = '{$_POST["p_brand"]}', `p_detail` = '{$_POST["p_detail"]}', `p_price` = '{$_POST["p_price"]}',
+                          `p_img` = '{$_FILES["p_img"]["name"]}', `pt_id` = '{$_POST["pt_id"]}' WHERE `pdfemale`.`p_id` = {$_GET["p_id"]};";
 
                 if (mysqli_query($conn, $sqlUp)) {
-                         copy($_FILES['p_img']['tmp_name'],"../img/". basename($_FILES["p_img"]["name"]));
+                            // @copy($_FILES['p_img']['tmp_name'],"../img/". basename($_FILES["p_img"]["name"]));
+                            @copy($_FILES['p_img']['tmp_name'],"../img/".$_FILES["p_img"]["name"].".jpg"); 
+                            //@copy($_FILES["p_img"]["name"],"../img/".$_FILES["p_img"]["name"].".jpg"); 
                     echo
                         "<script> 
                     Swal.fire({
