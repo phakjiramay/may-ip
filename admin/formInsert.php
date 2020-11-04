@@ -118,17 +118,17 @@ session_start();
 
              // @copy('foo/test.php', 'bar/test.php');
 
-                print_r($_FILES["p_img"]);
-                // echo
-                //     "<script> 
-                //     Swal.fire({
-                //         position: 'center',
-                //         icon: 'success',
-                //         title: 'บันทึกข้อมูลสำเร็จ',
-                //         showConfirmButton: false,
-                //         timer: 1500
-                //     }).then(()=> location = 'admin.php')
-                // </script>";
+               // print_r($_FILES["p_img"]);
+                echo
+                    "<script> 
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'บันทึกข้อมูลสำเร็จ',
+                        showConfirmButton: false,
+                        timer: 1500
+                    }).then(()=> location = 'admin.php')
+                </script>";
             } else {
                 echo
                     "<script> 
