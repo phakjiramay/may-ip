@@ -103,10 +103,11 @@ session_start();
             include_once("connectdb.php");
 
             //คำสั่ง SQL บันทึกข้อมูลลงฐานข้อมูล
-            $sql = "INSERT INTO tbl_products (p_id, p_name, p_price, p_detail,p_color,p_img,p_brand) 
-                VALUES (NULL, '{$_POST["p_name"]}', '{$_POST["p_price"]}', '{$_POST["p_detail"]}','{$_POST["p_color"]}', '{$_POST["p_img"]}', '{$_POST["p_brand"]}');";
+            $sql = "INSERT INTO `pdfemale` (`p_id`, `p_name`, `p_color`, `p_brand`, `p_detail`, `p_price`, `p_img`, `pt_id`) 
+                    VALUES (NULL, ''".$_POST['p_name']."'', ''".$_POST['p_color']."'', ''".$_POST['p_brand']."'', ''".$_POST['p_detail']."'', ''".$_POST['p_price']."'', ''".$_FILES["p_img"]["name"]."'', ''".$_POST['p_id']."'');";
 
             if (mysqli_query($conn, $sql)) {
+                @copy($_FILES["p_img"]["name"],"../img/".$_FILES["p_img"]["name"].".jpg"); 
                 echo
                     "<script> 
                     Swal.fire({
