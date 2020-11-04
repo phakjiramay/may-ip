@@ -20,7 +20,7 @@
         <?php
 	include("connectdb.php");
 	$sql = "SELECT  *  FROM  orders_detail
-          INNER JOIN pdfemale ON orders_detail.pid = pdfemale.p_id
+          INNER JOIN product ON orders_detail.pid = product.p_id
           WHERE orders_detail.oid = '{$_GET['a']}'  ";
 	$rs = mysqli_query($conn, $sql) ;
 	$i = 0;
@@ -31,7 +31,7 @@
 ?>
         <tr>
             <td><?=$i;?></td>
-            <td><img src="img/<?=$data['p_img'];?>" width="80"> <br>
+            <td><img src="images/<?=$data['p_picture'];?>" width="80"> <br>
                 <?=$data['od_product'];?> : <?=$data['p_name'];?></td>
             <td><?=$data['item'];?></td>
             <td><?=number_format($data['p_price'],0);?></td>

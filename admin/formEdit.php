@@ -10,7 +10,7 @@ session_start();
 <html lang="en">
 
 <head>
-    <title>Crud By Php Mysqli พี่เจมส์ ตาโต</title>
+    <title>Footwear</title>
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">

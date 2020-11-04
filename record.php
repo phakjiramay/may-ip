@@ -3,19 +3,19 @@
 	@session_start();
 	include("connectdb.php");
 	
-		foreach($_SESSION['fid'] as $o_member) {
-			$sum[$o_member] = $_SESSION['fprice'][$o_member] * $_SESSION['fitem'][$o_member] ;
-			$total += $sum[$o_member] ;
+		foreach($_SESSION['sid'] as $pid) {
+			$sum[$pid] = $_SESSION['sprice'][$pid] * $_SESSION['sitem'][$pid] ;
+			$total += $sum[$pid] ;
 		}
 	
 	$sql = "insert into `orders` values('', '$total', CURRENT_TIMESTAMP, '0');" ;
 	mysqli_query($conn, $sql) or die ("insert error") ;
 	$id = mysqli_insert_id($conn);
 	
-	foreach($_SESSION['fid'] as $o_member) {
-		$sql2 = "insert into orders_detail values('', '$id', '".$_SESSION['fid'][$o_member]."', '".$_SESSION['fitem'][$o_member]."');" ;
+	foreach($_SESSION['sid'] as $pid) {
+		$sql2 = "insert into orders_detail values('', '$id', '".$_SESSION['sid'][$pid]."', '".$_SESSION['sitem'][$pid]."');" ;
 		mysqli_query($conn, $sql2);
 	}
 	
-echo "<meta http-equiv=\"refresh\" content=\"0;URL=cart.php\">";
+echo "<meta http-equiv=\"refresh\" content=\"0;URL=clear.php\">";
 ?>

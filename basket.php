@@ -1,13 +1,27 @@
 <?php
+	@session_start();
 	include("connectdb.php");
+	@$sql = "select * from product where p_id='".$_GET['id']."' ";
+	@$rs = mysqli_query($conn, $sql) ;
+	@$data = mysqli_fetch_array($rs, MYSQLI_BOTH);
+	@$id = $_GET['id'] ;
+	
+	if(isset($_GET['id'])) {
+		@$_SESSION['sid'][$id] = $data['p_id'];
+		@$_SESSION['sname'][$id] = $data['p_name'];
+		@$_SESSION['sprice'][$id] = $data['p_price'];
+		@$_SESSION['sdetail'][$id] = $data['p_detail'];
+		@$_SESSION['spicture'][$id] = $data['p_picture'];
+		@$_SESSION['sitem'][$id]++;
+	}
 ?>
 <!doctype html>
 <html>
-<link href="bootstrap.css" rel="stylesheet" type="text/css">
 
 <head>
     <meta charset="utf-8">
-    <title>รายการสินค้า</title>
+    <title>ตะกร้าสินค้า</title>
+    <link href="bootstrap.css" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
@@ -113,70 +127,56 @@
                 </div>
             </div>
         </div>
-        <?php
-	$sql2 = "select  *  from product_type ";
-	$rs2 = mysqli_query($conn, $sql2) ;
-	while($data2 = mysqli_fetch_assoc($rs2)) {
+
+        <blockquote>
+            <h2>ตะกร้าสินค้า</h2>
+            <a href="index.php" class="btn btn-primary">กลับไปเลือกสินค้า</a>
+            <a href="clear.php" class="btn btn-warning">ลบสินค้าทั้งหมด</a>
+            <a href="record.php" class="btn btn-success">สั่งซื้อสินค้า</a>
+
+
+            <br><br>
+            <table width="100%" class="table">
+                <tr>
+                    <th width="5%">ที่</th>
+                    <th width="19%">รูปสินค้า</th>
+                    <th width="24%">ชื่อสินค้า</th>
+                    <th width="14%">ราคา/ชิ้น</th>
+                    <th width="15%">จำนวน (ชิ้น)</th>
+                    <th width="14%">รวม</th>
+                    <th width="9%">&nbsp;</th>
+                </tr>
+                <?php
+if(!empty($_SESSION['sid'])) {
+	foreach($_SESSION['sid'] as $pid) {
+		@$i++;
+		@$sum[$pid] = $_SESSION['sprice'][$pid] * $_SESSION['sitem'][$pid] ;
+		@$total += $sum[$pid] ;
 ?>
-
-        <a href="index.php?pt=<?=$data2['pt_id'];?>" class="btn btn-info"><?=$data2['pt_name'];?></a> |
-
-        <?php } ?>
-
-        <br><br>
-        <form class="form-inline" action="index.php" method="post">
-            <fieldset>
-
-                <!-- Text input-->
-                <div class="form-group">
-                    <div class="col-md-4">
-                        <label class="col-md-4 control-label" for="textinput">ค้นหา</label>
-                        <input name="kw" type="text" placeholder="กรอกคำค้น" class="form-control input-md">
-                        <button id="singlebutton" name="singlebutton" class="btn btn-primary">ค้นหา</button>
-                    </div>
-                </div>
-
-            </fieldset>
-        </form>
-
-
-        <?php
-	@$kw = $_POST['kw'] ;
-	@$pt = $_GET['pt'] ;
-	if (isset($_GET['pt'])) {
-		$s = "and (p_type = '$pt')"; 
-	} else {
-		$s = "";	
-	}
-	$sql = "select * from product where ( p_name like '%$kw%' or p_detail like '%$kw%' ) $s ";
-	$rs = mysqli_query($conn, $sql) ;
-	$i = 0;
-	while ($data = mysqli_fetch_array($rs, MYSQLI_BOTH)) {
-		$i++;
-		if( ($i % 3) == 1) {
-			echo "<div class='row' align='center' style='width:100%;'>";
-		}
+                <tr>
+                    <td><?=$i;?></td>
+                    <td><img src="images/<?=$_SESSION['spicture'][$pid];?>" width="120"></td>
+                    <td><?=$_SESSION['sname'][$pid];?></td>
+                    <td><?=number_format($_SESSION['sprice'][$pid],0);?></td>
+                    <td> <?=$_SESSION['sitem'][$pid];?></td>
+                    <td><?=number_format($sum[$pid],0);?></td>
+                    <td><a href="clear2.php?id=<?=$pid;?>" class="btn btn-danger">ลบ</a></td>
+                </tr>
+                <?php } // end foreach ?>
+                <tr>
+                    <td colspan="5" align="right"><strong>รวมทั้งสิ้น</strong> &nbsp; </td>
+                    <td><strong><?=number_format($total,0);?></strong></td>
+                    <td><strong>บาท</strong></td>
+                </tr>
+                <?php 
+} else {
 ?>
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <img src="images/<?=$data['p_picture'];?>" width="200">
-                <div class="caption">
-                    <h4><?=$data['p_name'];?></h4>
-                    <h4><?=number_format($data['p_price'],0);?> บาท</h4>
-                    <p><a href="basket.php?id=<?=$data['p_id'];?>" class="btn btn-primary"
-                            role="button">หยิบลงตะกร้า</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <?php 
-		if ( ($i % 3 ) == 0){
-			echo "</div>";	
-		}
-	} // end while
-
-	mysqli_close($conn);
-?>
+                <tr>
+                    <td colspan="7" height="50" align="center">ไม่มีสินค้าในตะกร้า</td>
+                </tr>
+                <?php } // end if ?>
+            </table>
+        </blockquote>
 
         <!-- jQuery -->
         <script src="js/jquery.min.js"></script>

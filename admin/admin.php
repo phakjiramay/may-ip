@@ -6,7 +6,7 @@ session_start();
 <html lang="en">
 
 <head>
-    <title>Admin</title>
+    <title>Footwear</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -94,7 +94,7 @@ session_start();
                     <ul class="list-inline">
                         <li class="list-inline-item">
                             <img alt="Avatar" class="table-avatar w-100 h-100"
-                                src="../img/<?php echo $item["p_img"]; ?>">
+                                src="../images/<?php echo $item["p_img"]; ?>">
                         </li>
                     </ul>
 

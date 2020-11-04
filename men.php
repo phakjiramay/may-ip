@@ -123,7 +123,7 @@
                     <?php 
 						include_once("connectdb.php");
 
-						$sql = "SELECT * FROM `pdfemale` WHERE pt_id='1'";
+						$sql = "SELECT * FROM `product_type` WHERE 	pt_id ='1'";
 						$result = mysqli_query($conn, $sql);
 						if (mysqli_num_rows($result) > 0) {
 						// output data of each row
