@@ -228,7 +228,7 @@ if(!empty($_SESSION['fid'])) {
                             </footer>
                         </div>
                         <center>
-                            <p><a href="clear.php" class="btn btn-primary" role="button">ยืนยัน
+                            <p><a href="loginB.php" class="btn btn-primary" role="button">ยืนยัน
                                 </a>
                         </center>
                         <div class="gototop js-top">
